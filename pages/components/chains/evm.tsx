@@ -6,18 +6,18 @@ function Evm(props:any) {
     <Box>
       <Stack>
         <Input
-          onChange={(input: any) => props.setContractAddress(input)}
+          onChange={(event: any) => props.setContractAddress(event.currentTarget.value)}
           style={{ marginTop: "20px" }}
           placeholder="Contract Address"
         />
         <Input
         style={{ marginTop: "20px" }}
-          onChange={(input: any) => props.setContractMethod(input)}
+          onChange={(event: any) => props.setContractMethod(event.currentTarget.value)}
           placeholder="Contract Method"
         />
         <Textarea
         style={{ marginTop: "20px" }}
-          onChange={(input: any) => props.setContractABI(input)}
+          onChange={(event: any) => props.setContractABI(event.currentTarget.value)}
           placeholder="Contract ABI"
         />
       </Stack>

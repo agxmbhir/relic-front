@@ -14,7 +14,7 @@ function Task(props: any) {
                 rightSection={<IconChevronDown size={14} />}
                 rightSectionWidth={40}
             />
-          <Input style={{ marginTop: "20px" }} onChange={(input: any) => props.setApiEndpoint(input)} placeholder="API Endpoint" />
+          <Input style={{ marginTop: "20px" }} onChange={(event: any) => props.setApiEndpoint(event.currentTarget.value)} placeholder="API Endpoint" />
           </Stack>
   </Box>
     );

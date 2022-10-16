@@ -18,17 +18,16 @@ function Trigger(props: any) {
         <NativeSelect
         style={{ marginTop: "20px" }}
             placeholder="Select Chain"
-            data={['Ethereum', 'Polygon', 'Sonr', "Jump"]}
+            data={['Ethereum', 'Avalanche', 'Sonr', "Jump"]}
             value={props.chain}
             onChange={(event: any) => props.setChain(event.currentTarget.value)}
             rightSection={<IconChevronDown size={14} />}
             rightSectionWidth={40}
         />
         {props.chain === "Sonr" ? (
-          <Sonr sonrTask={props.sonrTask} setSonrTask={props.setSonrTask} />
+          <Sonr sonrTask={props.sonrTask} setSonrAlias={props.setSonrAlias} setSonrTask={props.setSonrTask} />
         ) : props.chain !== "" ? (
           <Evm
-           
             setContractAddress={props.setContractAddress}
             setContractMethod={props.setContractMethod}
             setContractABI={props.setContractABI}

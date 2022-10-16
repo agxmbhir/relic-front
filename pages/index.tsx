@@ -3,6 +3,7 @@ import { Button, Group, Box, Title, Grid, NativeSelect } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons";
 import Trigger from './components/trigger';
 import Task from './components/task';
+import { postEvm, postSonr } from './api/hello';
 
 export default function IndexPage() {
   const [triggerSelected, setTriggerSelected] = useState("");
@@ -14,6 +15,7 @@ export default function IndexPage() {
   const [apiEndpoint, setApiEndpoint] = useState("");
   const [apiMethod, setApiMethod] = useState("");
   const [sonrTask, setSonrTask] = useState("");
+  const [aliasAddress, setAliasAddress] = useState("");
   return (
     <Box style={{padding: "100px"}}>
       <Title>Relic</Title>
@@ -55,6 +57,8 @@ export default function IndexPage() {
                 setContractABI={setContractABI}
                 setSonrTask={setSonrTask}
                 sonrTask={sonrTask}
+                sonrAlias={aliasAddress}
+                setSonrAlias={setAliasAddress}
                 chain={chain}
               />
             </Grid.Col>
@@ -75,7 +79,20 @@ export default function IndexPage() {
                 <Button
                 style={{width:"70%", marginTop: "20px" , backgroundColor: "linear(to-l, #7928CA, #FF0080)" }}
                   onClick={() => {
-                    console.log("chain", chain);
+                    console.log({
+                      chain: chain,
+                      address: contractAddress,
+                      event_name: contractMethod,
+                      abi_endpoint: contractABI,
+                      abi : contractABI,
+                    });
+                    postEvm({
+                      chain: chain,
+                      address: contractAddress,
+                      event_name: contractMethod,
+                      abi_endpoint: contractABI,
+                      abi : contractABI,
+                    })
                    } 
                   }
                 >
@@ -88,7 +105,16 @@ export default function IndexPage() {
                 style={{marginTop: "20px" , width:"70%",  backgroundColor: "linear(to-l, #7928CA, #FF0080)" }}
                 
                 onClick={() => {
-                  console.log("chain", chain);
+                  {
+                    console.log({
+                      alias: aliasAddress,
+                      api_endpoint: apiEndpoint,
+                    })
+                    postSonr({
+                      alias: aliasAddress,
+                      api_endpoint: apiEndpoint,
+                    })
+                  }
                 }}
               >
                 Deploy!
