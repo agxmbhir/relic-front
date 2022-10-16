@@ -73,7 +73,7 @@ export default function IndexPage() {
             apiEndpoint &&
             apiMethod && (
                 <Button
-                style={{width:"70%", marginTop: "20px" , backgroundGradient: "linear(to-l, #7928CA, #FF0080)" }}
+                style={{width:"70%", marginTop: "20px" , backgroundColor: "linear(to-l, #7928CA, #FF0080)" }}
                   onClick={() => {
                     console.log("chain", chain);
                    } 
@@ -85,7 +85,7 @@ export default function IndexPage() {
           {chain && apiEndpoint && apiMethod && sonrTask && (
               <Button
                
-                style={{marginTop: "20px" , width:"70%",  backgroundGradient: "linear(to-l, #7928CA, #FF0080)" }}
+                style={{marginTop: "20px" , width:"70%",  backgroundColor: "linear(to-l, #7928CA, #FF0080)" }}
                 
                 onClick={() => {
                   console.log("chain", chain);

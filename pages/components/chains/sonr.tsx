@@ -23,7 +23,7 @@ function Sonr(props: any) {
             </Stack>
             {props.sonrTask === "Monitor Alias"  && <Input
             style={{ marginTop: "20px" }}
-             onChange={(value: any) => props.setAliasAddress} placeHolder={'Enter Alias ID'}/> }
+             onChange={(value: any) => props.setAliasAddress(value)} placeholder={'Enter Alias ID'}/> }
     
           </Box>
         );
