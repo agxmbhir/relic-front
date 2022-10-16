@@ -18,7 +18,7 @@ function Trigger(props: any) {
         <NativeSelect
         style={{ marginTop: "20px" }}
             placeholder="Select Chain"
-            data={['Ethereum', 'Avalanche', 'Sonr', "Jump"]}
+            data={['mainnet', 'Avalanche', 'Sonr', "Jump"]}
             value={props.chain}
             onChange={(event: any) => props.setChain(event.currentTarget.value)}
             rightSection={<IconChevronDown size={14} />}
